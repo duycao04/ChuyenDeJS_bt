@@ -1,8 +1,11 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import Logo from "./assets/images/logo.webp";
-import Slider1 from "./assets/images/slider_1.webp";
+import Slider1 from "./components/Slider.jsx";
 import product1 from "./assets/images/xe.webp";
+import ChinhSachItem from "./components/ChinhSachItem.jsx";
+import Database from "./data_fake.json";
+import Product from "./components/Product.jsx";
 import {
   FaSearch,
   FaRegUser,
@@ -14,12 +17,14 @@ import {
 import { CiHeart } from "react-icons/ci";
 import { PiBellRingingFill } from "react-icons/pi";
 import { BsHandbag } from "react-icons/bs";
+import { HiShoppingCart } from "react-icons/hi";
+import GioiThieu from "./components/GioiThieu_Footer.jsx";
 
 function App() {
-  const hoten = "Cao Tấn Duy";
+  const listproduct = Database.products;
   return (
     <>
-    {/* header */}
+      {/* header */}
       <header className="bg-white">
         <div className="container">
           <div className="row">
@@ -126,103 +131,148 @@ function App() {
       {/* main */}
       <main>
         {/* //slide động */}
-        <div id="carouselExample" class="carousel slide">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src={Slider1} class="d-block w-100" alt="..." />
+        <Slider1 />
+        {/* sản phẩm */}
+        <div className="ChinhSach">
+          <div className="row py-5">
+            <div className="col-md-3">
+              <ChinhSachItem
+                image="https://bizweb.dktcdn.net/100/491/897/themes/915864/assets/chinhsach_1.png?1712652027135"
+                alt="chinhsach1"
+                title="Miễn Phí Vận Chuyển"
+                des="Cho đơn hàng từ 500k"
+              />
             </div>
-            <div class="carousel-item">
-              <img src={Slider1} class="d-block w-100" alt="..." />
+            <div className="col-md-3">
+              <ChinhSachItem
+                image="https://bizweb.dktcdn.net/100/491/897/themes/915864/assets/chinhsach_1.png?1712652027135"
+                alt="chinhsach1"
+                title="Miễn Phí Vận Chuyển"
+                des="Cho đơn hàng từ 500k"
+              />
             </div>
-            <div class="carousel-item">
-              <img src={Slider1} class="d-block w-100" alt="..." />
+            <div className="col-md-3">
+              <ChinhSachItem
+                image="https://bizweb.dktcdn.net/100/491/897/themes/915864/assets/chinhsach_1.png?1712652027135"
+                alt="chinhsach1"
+                title="Miễn Phí Vận Chuyển"
+                des="Cho đơn hàng từ 500k"
+              />
+            </div>
+            <div className="col-md-3">
+              <ChinhSachItem
+                image="https://bizweb.dktcdn.net/100/491/897/themes/915864/assets/chinhsach_1.png?1712652027135"
+                alt="chinhsach1"
+                title="Miễn Phí Vận Chuyển"
+                des="Cho đơn hàng từ 500k"
+              />
             </div>
           </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExample"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExample"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+          <hr />
         </div>
-        {/* sản phẩm */}
-        <div class="container">
-          <h1>Danh sách sản phẩm</h1>
-          <div class="row">
-            <div class="col">
-              <div class="card">
-                <img src={product1} class="card-img-top" alt="Sản phẩm 1" />
-                <div class="card-body">
-                  <h5 class="card-title">Sản phẩm 1</h5>
-                  <p class="card-text">Mô tả sản phẩm 1</p>
-                  <p class="card-text">Giá: 100.000 VNĐ</p>
-                  <a href="#" class="btn btn-primary">
-                    Xem thêm
-                  </a>
+        <div className="section_flash_sale">
+          <div className="container">
+            <div className="row">
+              {listproduct.map((pt, index) => {
+                return (
+                  <div className="col-md" key={index}>
+                    <Product product={pt} />
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+        <div className="list_product">
+          <div class="container">
+            <h1>Danh sách sản phẩm</h1>
+            <div class="row">
+              <div class="col">
+                <div class="card">
+                  <img
+                    src={product1}
+                    class="card-img-top card-image"
+                    alt="Sản phẩm 1"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Sản phẩm 1</h5>
+                    <p class="card-text">Mô tả sản phẩm 1</p>
+                    <p class="card-text">Giá: 100.000 VNĐ</p>
+                    <a href="#" class="btn btn-primary">
+                      <span>Thêm vào giỏ hàng</span>
+                      <span>
+                        <HiShoppingCart />
+                      </span>
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                <img src={product1} class="card-img-top" alt="Sản phẩm 2" />
-                <div class="card-body">
-                  <h5 class="card-title">Sản phẩm 2</h5>
-                  <p class="card-text">Mô tả sản phẩm 2</p>
-                  <p class="card-text">Giá: 100.000 VNĐ</p>
-                  <a href="#" class="btn btn-primary">
-                    Xem thêm
-                  </a>
+              <div class="col">
+                <div class="card">
+                  <img
+                    src={product1}
+                    class="card-img-top card-image"
+                    alt="Sản phẩm 2"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Sản phẩm 2</h5>
+                    <p class="card-text">Mô tả sản phẩm 2</p>
+                    <p class="card-text">Giá: 100.000 VNĐ</p>
+                    <a href="#" class="btn btn-primary">
+                      Thêm vào giỏ hàng
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                <img src={product1} class="card-img-top" alt="Sản phẩm 3" />
-                <div class="card-body">
-                  <h5 class="card-title">Sản phẩm 3</h5>
-                  <p class="card-text">Mô tả sản phẩm 3</p>
-                  <p class="card-text">Giá: 100.000 VNĐ</p>
-                  <a href="#" class="btn btn-primary">
-                    Xem thêm
-                  </a>
+              <div class="col">
+                <div class="card">
+                  <img
+                    src={product1}
+                    class="card-img-top card-image"
+                    alt="Sản phẩm 3"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Sản phẩm 3</h5>
+                    <p class="card-text">Mô tả sản phẩm 3</p>
+                    <p class="card-text">Giá: 100.000 VNĐ</p>
+                    <a href="#" class="btn btn-primary">
+                      Thêm vào giỏ hàng
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                <img src={product1} class="card-img-top" alt="Sản phẩm 4" />
-                <div class="card-body">
-                  <h5 class="card-title">Sản phẩm 4</h5>
-                  <p class="card-text">Mô tả sản phẩm 4</p>
-                  <p class="card-text">Giá: 100.000 VNĐ</p>
-                  <a href="#" class="btn btn-primary">
-                    Xem thêm
-                  </a>
+              <div class="col">
+                <div class="card">
+                  <img
+                    src={product1}
+                    class="card-img-top card-image"
+                    alt="Sản phẩm 4"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Sản phẩm 4</h5>
+                    <p class="card-text">Mô tả sản phẩm 4</p>
+                    <p class="card-text">Giá: 100.000 VNĐ</p>
+                    <a href="#" class="btn btn-primary">
+                      Thêm vào giỏ hàng
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                <img src={product1} class="card-img-top" alt="Sản phẩm 5" />
-                <div class="card-body">
-                  <h5 class="card-title">Sản phẩm 5</h5>
-                  <p class="card-text">Mô tả sản phẩm 5</p>
-                  <p class="card-text">Giá: 100.000 VNĐ</p>
-                  <a href="#" class="btn btn-primary">
-                    Xem thêm
-                  </a>
+              <div class="col">
+                <div class="card">
+                  <img
+                    src={product1}
+                    class="card-img-top card-image"
+                    alt="Sản phẩm 5"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Sản phẩm 5</h5>
+                    <p class="card-text">Mô tả sản phẩm 5</p>
+                    <p class="card-text">Giá: 100.000 VNĐ</p>
+                    <a href="#" class="btn btn-primary">
+                      Thêm vào giỏ hàng
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -234,20 +284,7 @@ function App() {
         <div class="container">
           <div class="row">
             {/* giới thiệu */}
-            <div class="col-md-4">
-              <h5>Giới thiệu</h5>
-              <ul class="list-unstyled">
-                <li>
-                  <a href="#">Về chúng tôi</a>
-                </li>
-                <li>
-                  <a href="#">Dịch vụ</a>
-                </li>
-                <li>
-                  <a href="#">Liên hệ</a>
-                </li>
-              </ul>
-            </div>
+            <GioiThieu />
             {/* chính sách */}
             <div class="col-md-4">
               <h5>Chính Sách</h5>
@@ -298,22 +335,30 @@ function App() {
               <ul class="list-inline">
                 <li class="list-inline-item">
                   <a href="#">
-                    <i class="fab fa-facebook"><FaFacebook /></i>
+                    <i class="fab fa-facebook">
+                      <FaFacebook />
+                    </i>
                   </a>
                 </li>
                 <li class="list-inline-item">
                   <a href="#">
-                    <i class="fab fa-Google"><FaGoogle /></i>
+                    <i class="fab fa-Google">
+                      <FaGoogle />
+                    </i>
                   </a>
                 </li>
                 <li class="list-inline-item">
                   <a href="#">
-                    <i class="fab fa-Youtobe"><FaYoutube /></i>
+                    <i class="fab fa-Youtobe">
+                      <FaYoutube />
+                    </i>
                   </a>
                 </li>
                 <li class="list-inline-item">
                   <a href="#">
-                    <i class="fab fa-instagram"><FaInstagram /></i>
+                    <i class="fab fa-instagram">
+                      <FaInstagram />
+                    </i>
                   </a>
                 </li>
               </ul>
@@ -323,8 +368,7 @@ function App() {
           <div class="row mt-3">
             <div class="col text-center">
               <p class="mb-0">
-                Copyright © 2024 <a href="#">SID</a>. All rights
-                reserved.
+                Copyright © 2024 <a href="#">SID</a>. All rights reserved.
               </p>
             </div>
           </div>
