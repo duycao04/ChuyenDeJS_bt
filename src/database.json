@@ -1,0 +1,70 @@
+{
+    "categorys":[
+        {"id":1,"image":"hinh.jpg","name":"dong ho","slug":"dong-ho"},
+        {"id":2,"image":"hinh.jpg","name":"dong ho","slug":"dong-ho"},
+        {"id":3,"image":"hinh.jpg","name":"dong ho","slug":"dong-ho"},
+        {"id":4,"image":"hinh.jpg","name":"dong ho","slug":"dong-ho"},
+        {"id":5,"image":"hinh.jpg","name":"dong ho","slug":"dong-ho"},
+        {"id":6,"image":"hinh.jpg","name":"dong ho","slug":"dong-ho"}
+    ],
+    "brands":
+    [
+        {"id":1,"image":"hinh.jpg","name":"xe may","slug":"xe-may"},
+        {"id":2,"image":"hinh.jpg","name":"xe may","slug":"xe-may"},
+        {"id":3,"image":"hinh.jpg","name":"xe may","slug":"xe-may"},
+        {"id":4,"image":"hinh.jpg","name":"xe may","slug":"xe-may"},
+        {"id":5,"image":"hinh.jpg","name":"xe may","slug":"xe-may"},
+        {"id":6,"image":"hinh.jpg","name":"xe may","slug":"xe-may"}
+    ],
+    "user":[
+        {"id":1,"name":"caotanduy","email":"fake@gmail.com","phone":"0123456789","image":"hinh.jpg","address":"Tp.HCM","roles":"admin"},
+        {"id":2,"name":"caotanduy","email":"fake@gmail.com","phone":"0123456789","image":"hinh.jpg","address":"Tp.HCM","roles":"admin"},
+        {"id":3,"name":"caotanduy","email":"fake@gmail.com","phone":"0123456789","image":"hinh.jpg","address":"Tp.HCM","roles":"admin"}
+    ],
+    "topic":[
+        {"id":1,"name":"bai viet 1","slug":"bai-viet-1","description":"bai viet 1"},
+        {"id":2,"name":"bai viet 2","slug":"bai-viet-2","description":"bai viet 2"},
+        {"id":3,"name":"bai viet 3","slug":"bai-viet-3","description":"bai viet 3"},
+        {"id":4,"name":"bai viet 4","slug":"bai-viet-4","description":"bai viet 4"}
+    ],
+    "order":[
+        {"id":1,"user_id":11,"name":"Hoài","phone":"0123456789","email":"hoai@gmail.com","address":"123","note":"No","created_at":"05/05/2024","updated_at":"23/05/2024","updated_by":"Hoài","status":2},
+        {"id":2,"user_id":12,"name":"Thành","phone":"0123456789","email":"thanh@gmail.com","address":"123","note":"No","created_at":"05/05/2024","updated_at":"23/05/2024","updated_by":"Thành","status":2},
+        {"id":3,"user_id":13,"name":"Thảo","phone":"0123456789","email":"thao@gmail.com","address":"123","note":"Yes","created_at":"05/05/2024","updated_at":"23/05/2024","updated_by":"Thảo","status":2},
+        {"id":4,"user_id":14,"name":"Ái Nhi","phone":"0123456789","email":"anhi@gmail.com","address":"123","note":"Yes","created_at":"05/05/2024","updated_at":"23/05/2024","updated_by":"Ái Nhi","status":2},
+        {"id":5,"user_id":15,"name":"Yến Nhi","phone":"0123456789","email":"ynhi@gmail.com","address":"123","note":"No","created_at":"05/05/2024","updated_at":"23/05/2024","updated_by":"Yến Nhi","status":2},
+        {"id":6,"user_id":16,"name":"Tân","phone":"0123456789","email":"tan@gmail.com","address":"123","note":"Yes","created_at":"05/05/2024","updated_at":"23/05/2024","updated_by":"Tân","status":2}
+    ],
+
+    "orderdetail":[
+        {"id":1,"order_id":1,"product_id":11003,"price":30.5,"qty":1,"amount":3.0},
+        {"id":2,"order_id":1,"product_id":11002,"price":40.0,"qty":1,"amount":1.0},
+        {"id":3,"order_id":1,"product_id":11009,"price":10.1,"qty":1,"amount":2.0},
+        {"id":4,"order_id":1,"product_id":11013,"price":12.12,"qty":1,"amount":1.0},
+        {"id":5,"order_id":1,"product_id":11011,"price":18.7,"qty":1,"amount":3.0},
+        {"id":6,"order_id":1,"product_id":11000,"price":7.9,"qty":1,"amount":2.0}
+    ],
+    "product": [
+        {"id":1,"image":"hinh.jpg","name":"dong ho","slug":"dong-ho","Category_id":"A","brand_id":"1","price":"300","price_sale":"100"},
+        {"id":1,"image":"hinh.jpg","name":"dong ho","slug":"dong-ho","Category_id":"B","brand_id":"2","price":"300","price_sale":"100"},
+        {"id":1,"image":"hinh.jpg","name":"dong ho","slug":"dong-ho","Category_id":"C","brand_id":"3","price":"300","price_sale":"100"},
+        {"id":1,"image":"hinh.jpg","name":"dong ho","slug":"dong-ho","Category_id":"D","brand_id":"4","price":"300","price_sale":"100"}
+    ],
+    "menu":[
+        {"id":1,"link":"https://coccoc.com/search?query=m.facebook.com","name":"thoi trang nam","slug":"thoi-trang-nam"},
+        {"id":2,"link":"https://coccoc.com/search?query=m.facebook.com","name":"thoi trang nam","slug":"thoi-trang-nam"},
+        {"id":3,"link":"https://coccoc.com/search?query=m.facebook.com","name":"thoi trang nam","slug":"thoi-trang-nam"},
+        {"id":4,"link":"https://coccoc.com/search?query=m.facebook.com","name":"thoi trang nam","slug":"thoi-trang-nam"},
+        {"id":5,"link":"https://coccoc.com/search?query=m.facebook.com","name":"thoi trang nam","slug":"thoi-trang-nam"}
+    ],
+    "post":[
+        {"id":1,"topic_id":"1","detail":"chi tiet topic 1","slug":"topic-1","title":"Topic 1"},
+        {"id":2,"topic_id":"2","detail":"chi tiet topic 2","slug":"topic-2","title":"Topic 2"},
+        {"id":3,"topic_id":"3","detail":"chi tiet topic 3","slug":"topic-3","title":"Topic 3"},
+        {"id":4,"topic_id":"4","detail":"chi tiet topic 4","slug":"topic-4","title":"Topic 4"},
+        {"id":5,"topic_id":"5","detail":"chi tiet topic 5","slug":"topic-5","title":"Topic 5"}
+    ]
+
+    
+}
+
